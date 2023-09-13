@@ -1,0 +1,59 @@
+<!-- app/views/pokemons/details.html.erb -->
+<div class="pokemon-card" style="width: 50%; margin: 0 auto; display:block;">
+  <img src="<%= @pokemon['sprites']['front_default'] %>" alt="<%= @pokemon['name'] %>">
+   <img src="<%= @pokemon['sprites']['back_default'] %>" alt="<%= @pokemon['name'] %>">
+  <h1><%= @pokemon['name'].capitalize %></h1>
+</div>
+<br/>
+<div class='rounded'>
+<table width='100%' style='border:1; border-color:black' >
+    <tr class="tr-title">
+      <td colspan=2><b>Características</b></td>
+    </tr>
+    <tr>
+      <td class="tr-title" >Altura</td>
+      <td><%= @pokemon['height'] %> ft</td>
+    </tr>
+    <tr>
+      <td class="tr-title">Peso</td>
+      <td><%= @pokemon['weight'] %> hg</td>
+    </tr>
+    <tr>
+      <td class="tr-title">Tipo</td>
+      <td>
+      <br/>
+       <% @names = @pokemon['types'].map { |typesPokemon| typesPokemon["type"]["name"] }  %>
+       <% @names.each do |name| %>
+          <%=name.capitalize%><br/>
+       <% end%>
+       <br/>
+      </td>
+    </tr>
+    <tr>
+      <td class="tr-title">Habilidades</td>
+      <td>
+      <br/>
+       <% @abilities = @pokemon['abilities'].map { |abilitiesPokemon| abilitiesPokemon["ability"]["name"] }  %>
+       <% @abilities.each do |ability| %>
+          <%=ability.capitalize%><br/>
+       <% end%>
+       <br/>
+      </td>
+    </tr>
+    <tr>
+      <td class="tr-title">Itens</td>
+      <td>
+      <br/>
+       <% @heldItens = @pokemon['held_items'].map { |itens| itens["item"]["name"] }  %>
+       <% @heldItens.each do |item| %>
+          <%=item.capitalize%>&nbsp;<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/<%=item%>.png"><br/>
+
+       <% end%>
+       <br/>
+      </td>
+    </tr>
+</table>
+</div>
+<br/>
+<br/>
+  <%= link_to "Voltar para a Pokedéx", pokemons_path, class: "btn-back" %>

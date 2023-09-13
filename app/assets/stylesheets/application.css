@@ -1,0 +1,84 @@
+/* app/assets/stylesheets/pokemons.css */
+.pokemon-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: calc(16% - 10px); /* Define a largura de cada card, considerando 5 colunas por linha */
+    background-color: #f9f9f9;
+  }
+
+  .pokemon-card a, p {
+    text-decoration: none; /* Remove o sublinhado do link */
+    border: none; /* Remove a borda do link */
+    outline: none; /* Remove o contorno de foco ao clicar no link (se desejar) */
+  }
+  
+  .pokemon-card img {
+    max-width: 100%;
+  }
+  
+  .pokemon-name {
+    font-weight: bold;
+    text-decoration: none; 
+    color: black;
+    cursor: pointer; 
+  }
+
+  .pokedex-image {
+    width: 80px;
+    padding: 15px;
+    margin-right: 15px; 
+    vertical-align: middle;
+  }
+
+  .pokemon-card a:-webkit-any-link {
+    color: inherit; /* Use a cor padrão do texto do elemento pai */
+    cursor: pointer;
+    text-decoration: none; /* Remova o sublinhado do link */
+    border: none; /* Remova a borda do link */
+    outline: none; /* Remova o contorno de foco ao clicar no link (se desejar) */
+  }
+
+  a:-webkit-any-link {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: gray; /* Cor de fundo do botão (exemplo: azul) */
+    color: #000; 
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+.rounded{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+table{
+  width: 100%;
+  text-align: center;
+  font-size: 1.25em;
+  padding: 10px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  overflow: hidden;
+}
+
+.tr-title {
+  background-color: skyblue;
+}
+  

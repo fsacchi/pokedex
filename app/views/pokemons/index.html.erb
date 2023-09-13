@@ -1,0 +1,18 @@
+<!-- app/views/pokemons/index.html.erb -->
+<div class="pokemon-card" style="width: 50%; margin: 0 auto; display:block;">
+<h1><%= image_tag 'pokedex.png', class: 'pokedex-image' %>Pokedéx Primeira Geração</h1>
+</div>
+<div class="row">
+  <% @pokemons.each_slice(5) do |slice| %>
+    <div class="col-md-2">
+      <% slice.each do |pokemon| %>
+        <%= link_to details_pokemons_path(pokemon['url'].split('/').last) do%>
+            <div class="pokemon-card">
+                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon['url'].split('/').last %>.png" alt="<%= pokemon['name'] %>">
+                 <p class="pokemon-name" style="text-decoration:none;"><%= pokemon['name'].capitalize %></p>
+             </div>
+         <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
